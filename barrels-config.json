@@ -1,0 +1,16 @@
+{
+  "delete": true,
+  "directory": [
+    "./src/pages",
+    "./src/features",
+    "./src/shared"
+  ],
+  "exclude": [
+    ".spec.tsx",
+    ".test.tsx",
+    ".stories.tsx",
+    "vite-env"
+  ],
+  "location": "all",
+  "singleQuotes": true
+}
