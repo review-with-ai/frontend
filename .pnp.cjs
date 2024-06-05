@@ -49,6 +49,9 @@ const RAW_RUNTIME_STATE =
           ["@vitejs/plugin-react", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:4.3.0"],\
           ["axios", "npm:1.7.2"],\
           ["barrelsby", "npm:2.8.1"],\
+          ["chromatic", "virtual:a1cb9ce426e87f1a3ad3bc8e00eef6b02921ac7ea9bca61a2ba32b3432bed85be85c76d5e1e34eb89bc45c4fc777f1d38bb5b96e90ea1498072f0b5d3fce61e3#npm:11.5.1"],\
+          ["cross-env", "npm:7.0.3"],\
+          ["dotenv", "npm:16.4.5"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-airbnb", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:19.0.4"],\
           ["eslint-config-prettier", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:9.1.0"],\
@@ -10590,6 +10593,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["cross-env", [\
+      ["npm:7.0.3", {\
+        "packageLocation": "../../.yarn/berry/cache/cross-env-npm-7.0.3-96d81820f4-10c0.zip/node_modules/cross-env/",\
+        "packageDependencies": [\
+          ["cross-env", "npm:7.0.3"],\
+          ["cross-spawn", "npm:7.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["cross-spawn", [\
       ["npm:7.0.3", {\
         "packageLocation": "../../.yarn/berry/cache/cross-spawn-npm-7.0.3-e4ff3e65b3-10c0.zip/node_modules/cross-spawn/",\
@@ -16610,6 +16623,9 @@ const RAW_RUNTIME_STATE =
           ["@vitejs/plugin-react", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:4.3.0"],\
           ["axios", "npm:1.7.2"],\
           ["barrelsby", "npm:2.8.1"],\
+          ["chromatic", "virtual:a1cb9ce426e87f1a3ad3bc8e00eef6b02921ac7ea9bca61a2ba32b3432bed85be85c76d5e1e34eb89bc45c4fc777f1d38bb5b96e90ea1498072f0b5d3fce61e3#npm:11.5.1"],\
+          ["cross-env", "npm:7.0.3"],\
+          ["dotenv", "npm:16.4.5"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-airbnb", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:19.0.4"],\
           ["eslint-config-prettier", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:9.1.0"],\
