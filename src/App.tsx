@@ -1,8 +1,8 @@
 import './App.css';
-import { Button } from '@chakra-ui/react';
+import { Home } from './pages/Home';
 
 function App() {
-  return <Button type="button">home</Button>;
+  return <Home />;
 }
 
 export default App;
