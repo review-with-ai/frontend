@@ -1,6 +1,6 @@
 import { Button, Flex } from '@chakra-ui/react';
 import styled from '@emotion/styled';
-import { BaseButton } from '@/shared';
+import { BaseButton, DetailButton } from '@/shared';
 
 export const Home = () => (
   <>
@@ -12,6 +12,7 @@ export const Home = () => (
       <Button>
         <span>회원가입</span>
       </Button>
+      <BaseButton type="button">AI로 질문을 생성해 보세요</BaseButton>
     </Flex>
     <Flex direction="row" justify="center">
       <Circle>
@@ -20,7 +21,7 @@ export const Home = () => (
       <Circle>
         <img src="src/assets/react.svg" alt="icon" />
       </Circle>
-      <BaseButton type="button">AI로 질문을 생성해 보세요</BaseButton>
+      <DetailButton type="button">편집</DetailButton>
     </Flex>
   </>
 );

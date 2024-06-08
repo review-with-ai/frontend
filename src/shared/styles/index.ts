@@ -4,3 +4,4 @@
 
 export * from './GlobalStyles';
 export * from './styleToken';
+export * from './theme';

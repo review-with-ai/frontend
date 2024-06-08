@@ -11,20 +11,9 @@ type ButtonProps = {
 
 export const BaseButton = ({ type, children, onClick }: ButtonProps) => (
   <Container>
-    <Button
-      type={type}
-      style={{
-        width: '100%',
-        padding: '15px 23px',
-        textAlign: 'left',
-        cursor: 'pointer',
-        backgroundColor: `${styleToken.color.white}`,
-        overflow: 'hidden',
-      }}
-      onClick={onClick}
-    >
+    <StyledButton variant="solid" theme={Button} type={type} onClick={onClick}>
       {children}
-    </Button>
+    </StyledButton>
   </Container>
 );
 
@@ -34,4 +23,18 @@ const Container = styled.div`
   border-radius: 10px;
   border: 1px solid ${styleToken.color.gray200};
   box-sizing: border-box;
+  color: ${styleToken.color.gray500};
+`;
+
+const StyledButton = styled(Button)`
+  width: 100%;
+  height: 60px;
+  padding: 15px 23px;
+  text-align: left;
+  color: ${styleToken.color.gray500};
+  background-color: ${styleToken.color.white};
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  border: none;
 `;
