@@ -5,13 +5,14 @@ import { styleToken } from '@/shared';
 
 type DetailButtonProps = {
   type: 'button' | 'submit' | 'reset';
+  theme?: 'solid' | 'highlight';
   children: string;
   onClick?: () => void;
 } & HTMLAttributes<HTMLButtonElement>;
 
-export const DetailButton = ({ type, children, onClick }: DetailButtonProps) => (
+export const DetailButton = ({ type, theme, children, onClick }: DetailButtonProps) => (
   <Container>
-    <StyledButton variant="solid" theme={Button} type={type} onClick={onClick}>
+    <StyledButton variant={theme} theme={Button} type={type} onClick={onClick}>
       {children}
     </StyledButton>
   </Container>

@@ -12,6 +12,13 @@ export const theme = extendTheme({
             bg: `${styleToken.color.gray100}`,
           },
         },
+        highlight: {
+          bg: `${styleToken.color.red}80`,
+          color: `${styleToken.color.red}`,
+          _hover: {
+            bg: `${styleToken.color.red}`,
+          },
+        },
       },
     },
   },

@@ -9,6 +9,7 @@ const colors = {
   gray600: '#131313',
   shadow: 'rgba(0, 0, 0, 0.25)',
   background: '#f1f4f8',
+  red: '#FF0000',
 } as const;
 
 const fontSize = {

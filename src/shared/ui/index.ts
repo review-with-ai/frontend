@@ -4,5 +4,4 @@
 
 export * from './Typography';
 export * from './Button/index';
-export * from './DetailButton/index';
 export * from './Input/index';

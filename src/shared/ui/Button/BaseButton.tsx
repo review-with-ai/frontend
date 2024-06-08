@@ -5,13 +5,14 @@ import { styleToken } from '@/shared';
 
 type ButtonProps = {
   type: 'button' | 'submit' | 'reset';
+  theme?: 'solid' | 'highlight';
   children: string;
   onClick?: () => void;
 } & HTMLAttributes<HTMLButtonElement>;
 
-export const BaseButton = ({ type, children, onClick }: ButtonProps) => (
+export const BaseButton = ({ type, theme, children, onClick }: ButtonProps) => (
   <Container>
-    <StyledButton variant="solid" theme={Button} type={type} onClick={onClick}>
+    <StyledButton variant={theme} theme={Button} type={type} onClick={onClick}>
       {children}
     </StyledButton>
   </Container>
@@ -32,7 +33,6 @@ const StyledButton = styled(Button)`
   padding: 15px 23px;
   text-align: left;
   color: ${styleToken.color.gray500};
-  background-color: ${styleToken.color.white};
   cursor: pointer;
   overflow: hidden;
   border-radius: 10px;
