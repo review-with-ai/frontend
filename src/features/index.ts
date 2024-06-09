@@ -3,4 +3,3 @@
  */
 
 export * from './Page';
-export * from './sum';
