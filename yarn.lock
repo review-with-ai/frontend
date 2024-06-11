@@ -11653,6 +11653,7 @@ __metadata:
     framer-motion: "npm:^11.2.10"
     globals: "npm:^15.3.0"
     husky: "npm:^9.0.11"
+    ip-address: "npm:^9.0.5"
     jsdom: "npm:^24.1.0"
     lint-staged: "npm:^15.2.5"
     prettier: "npm:^3.2.5"

@@ -1,22 +1,27 @@
 import { HTMLAttributes } from 'react';
 import { Button } from '@chakra-ui/react';
 import styled from '@emotion/styled';
-import { styleToken } from '@/shared';
+import { styleToken, Typography, TypographyVariant } from '@/shared';
 
 type DetailButtonProps = {
   type: 'button' | 'submit' | 'reset';
+  variant?: TypographyVariant;
   theme?: 'solid' | 'highlight';
   children: string;
   onClick?: () => void;
 } & HTMLAttributes<HTMLButtonElement>;
 
-export const DetailButton = ({ type, theme, children, onClick }: DetailButtonProps) => (
-  <Container>
-    <StyledButton variant={theme} theme={Button} type={type} onClick={onClick}>
-      {children}
-    </StyledButton>
-  </Container>
-);
+export const DetailButton = ({ type, variant, theme, children, onClick }: DetailButtonProps) => {
+  const typographyVariant = variant ?? 'subtitle2';
+
+  return (
+    <Container>
+      <StyledButton variant={theme} theme={Button} type={type} onClick={onClick}>
+        <Typography variant={typographyVariant}>{children}</Typography>
+      </StyledButton>
+    </Container>
+  );
+};
 
 const Container = styled.div`
   height: 100%;

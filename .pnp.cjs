@@ -68,6 +68,7 @@ const RAW_RUNTIME_STATE =
           ["framer-motion", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:11.2.10"],\
           ["globals", "npm:15.3.0"],\
           ["husky", "npm:9.0.11"],\
+          ["ip-address", "npm:9.0.5"],\
           ["jsdom", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:24.1.0"],\
           ["lint-staged", "npm:15.2.5"],\
           ["prettier", "npm:3.3.0"],\
@@ -16651,6 +16652,7 @@ const RAW_RUNTIME_STATE =
           ["framer-motion", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:11.2.10"],\
           ["globals", "npm:15.3.0"],\
           ["husky", "npm:9.0.11"],\
+          ["ip-address", "npm:9.0.5"],\
           ["jsdom", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:24.1.0"],\
           ["lint-staged", "npm:15.2.5"],\
           ["prettier", "npm:3.3.0"],\

@@ -9,16 +9,19 @@ const colors = {
   gray600: '#131313',
   shadow: 'rgba(0, 0, 0, 0.25)',
   background: '#f1f4f8',
-  red: '#FF0000',
+  red: '#ff5757',
 } as const;
 
 const fontSize = {
-  caption: '12px',
-  body: '14px',
-  subtitle: '16px',
-  title: '18px',
-  headline: '20px',
-  display: '24px',
+  h1: '22px',
+  h2: '20px',
+  h3: '18px',
+  h4: '16px',
+  h5: '14px',
+  subtitle1: '15px',
+  subtitle2: '13px',
+  body1: '15px',
+  body2: '13px',
 } as const;
 
 const fontWeight = {

@@ -12,10 +12,19 @@ export const GlobalStyles = () => (
         font-style: normal;
       }
 
+      @font-face {
+        font-family: 'Pretendard-Bold';
+        src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+      }
+
       *,
       *::before,
       *::after {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
       body {
@@ -26,6 +35,11 @@ export const GlobalStyles = () => (
         background-color: ${styleToken.color.white};
         margin: 0 auto;
         font-family: 'Pretendard-Regular', sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
       }
     `}
   />
