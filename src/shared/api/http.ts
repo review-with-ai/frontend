@@ -1,8 +1,7 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
-import { BASE_URL } from '@/shared';
 
 export const client = axios.create({
-  baseURL: BASE_URL,
+  baseURL: 'http://localhost:8080',
   timeout: 1000,
 });
 
