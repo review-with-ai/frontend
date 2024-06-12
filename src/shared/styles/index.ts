@@ -4,4 +4,4 @@
 
 export * from './GlobalStyles';
 export * from './styleToken';
-export * from './theme';
+export * from './colorScheme.ts';

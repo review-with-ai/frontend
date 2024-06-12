@@ -1,44 +1,41 @@
-import { HTMLAttributes } from 'react';
-import { Button } from '@chakra-ui/react';
-import styled from '@emotion/styled';
-import { styleToken, Typography, TypographyVariant } from '@/shared';
+import { HTMLAttributes, PropsWithChildren } from 'react';
+import { Button, ButtonProps } from '@chakra-ui/react';
+import { customTheme, Typography, TypographyVariant } from '@/shared';
 
-type ButtonProps = {
+type BaseButtonProps = {
   type: 'button' | 'submit' | 'reset';
-  variant?: TypographyVariant;
-  theme?: 'solid' | 'highlight';
+  font?: TypographyVariant;
+  width?: string;
+  height?: string;
   children: string;
   onClick?: () => void;
 } & HTMLAttributes<HTMLButtonElement>;
 
-export const BaseButton = ({ type, variant, theme, children, onClick }: ButtonProps) => {
-  const typographyVariant = variant ?? 'h5';
+export const BaseButton = ({
+  type,
+  font,
+  width,
+  height,
+  children,
+  onClick,
+  ...props
+}: PropsWithChildren<BaseButtonProps & ButtonProps>) => {
+  const typographyVariant = font ?? 'h5';
+  const { border, background, backgroundHover } = customTheme.colors.gray;
 
   return (
-    <Container>
-      <StyledButton variant={theme} theme={Button} type={type} onClick={onClick}>
-        <Typography variant={typographyVariant}>{children}</Typography>
-      </StyledButton>
-    </Container>
+    <Button
+      variant="outline"
+      type={type}
+      width={width}
+      height={height}
+      color={background}
+      borderColor={border}
+      _hover={{ background: backgroundHover }}
+      onClick={onClick}
+      {...props}
+    >
+      <Typography variant={typographyVariant}>{children}</Typography>
+    </Button>
   );
 };
-
-const Container = styled.div`
-  min-width: 230px;
-  margin: 20px 0 22px;
-  border-radius: 10px;
-  border: 1px solid ${styleToken.color.gray200};
-  box-sizing: border-box;
-`;
-
-const StyledButton = styled(Button)`
-  width: 100%;
-  height: 60px;
-  padding: 15px 23px;
-  text-align: left;
-  color: ${styleToken.color.gray500};
-  overflow: hidden;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-`;
