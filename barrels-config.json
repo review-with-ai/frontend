@@ -3,7 +3,10 @@
   "directory": [
     "./src/pages",
     "./src/features",
-    "./src/shared"
+    "./src/shared/api",
+    "./src/shared/components",
+    "./src/shared/constants",
+    "./src/shared/styles"
   ],
   "exclude": [
     ".spec.tsx",

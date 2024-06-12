@@ -5,4 +5,4 @@
 export * from './api/index';
 export * from './constants/index';
 export * from './styles/index';
-export * from './ui/index';
+export * from '@/shared/components/index';

@@ -4,7 +4,7 @@ type NoteProps = {
   children: React.ReactNode;
 };
 
-export const Note = ({ children }: NoteProps) => <Container>{children}</Container>;
+export const Body = ({ children }: NoteProps) => <Container>{children}</Container>;
 
 const Container = styled.div`
   width: 100%;

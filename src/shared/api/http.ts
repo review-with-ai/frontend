@@ -1,32 +1,20 @@
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
+import { BASE_URL, RUNTIME_ENV } from '@/shared/constants';
 
 export const client = axios.create({
-  baseURL: 'http://localhost:8080',
+  baseURL: BASE_URL[RUNTIME_ENV],
   timeout: 1000,
 });
 
-export const http = {
-  get: async function get(url: string, config?: AxiosRequestConfig) {
-    const response = await client.get(url, config);
-    return response.data;
-  },
-  post: async function post(url: string, data?: any, config?: AxiosRequestConfig) {
-    const response = await client.post(url, data, config);
-    return response.data;
-  },
-  put: async function put(url: string, data?: any, config?: AxiosRequestConfig) {
-    const response = await client.put(url, data, config);
-    return response.data;
-  },
-  patch: async function patch(url: string, data?: any, config?: AxiosRequestConfig) {
-    const response = await client.patch(url, data, config);
-    return response.data;
-  },
-  delete: async function del(url: string, config: AxiosRequestConfig) {
-    const response = await client.delete(url, config);
-    return response.data;
-  },
-};
+interface httpClient extends AxiosRequestConfig {
+  get: <T = any>(url: string, config?: AxiosRequestConfig) => Promise<T>;
+  post: <T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<T>;
+  put: <T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<T>;
+  patch: <T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<T>;
+  delete: <T = any>(url: string, config?: AxiosRequestConfig) => Promise<T>;
+}
+
+export const http: httpClient = client;
 
 export const handleAxiosError = (error: any) => {
   if (axios.isAxiosError(error)) {
