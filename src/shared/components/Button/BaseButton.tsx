@@ -5,19 +5,21 @@ import { customTheme, Typography, TypographyVariant } from '@/shared';
 type BaseButtonProps = {
   type: 'button' | 'submit' | 'reset';
   font?: TypographyVariant;
-  children: string;
+  img?: React.ReactNode;
+  children?: string;
   onClick?: () => void;
 } & HTMLAttributes<HTMLButtonElement>;
 
 export const BaseButton = ({
   type,
   font,
+  img,
   children,
   onClick,
   ...props
 }: PropsWithChildren<BaseButtonProps & ButtonProps>) => {
-  const typographyVariant = font ?? 'h5';
   const { border, background, backgroundHover } = customTheme.colors.gray;
+  const typographyVariant = font ?? 'h5';
 
   return (
     <Button
@@ -29,7 +31,8 @@ export const BaseButton = ({
       onClick={onClick}
       {...props}
     >
-      <Typography variant={typographyVariant}>{children}</Typography>
+      {img || null}
+      {children ? <Typography variant={typographyVariant}>{children}</Typography> : null}
     </Button>
   );
 };
