@@ -10,6 +10,8 @@ const colors = {
   shadow: 'rgba(0, 0, 0, 0.25)',
   background: '#f1f4f8',
   red: '#ff5757',
+  naver: '#03C75A',
+  kakao: '#FEE500',
 } as const;
 
 const fontSize = {

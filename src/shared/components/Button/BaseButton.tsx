@@ -5,8 +5,6 @@ import { customTheme, Typography, TypographyVariant } from '@/shared';
 type BaseButtonProps = {
   type: 'button' | 'submit' | 'reset';
   font?: TypographyVariant;
-  width?: string;
-  height?: string;
   children: string;
   onClick?: () => void;
 } & HTMLAttributes<HTMLButtonElement>;
@@ -14,8 +12,6 @@ type BaseButtonProps = {
 export const BaseButton = ({
   type,
   font,
-  width,
-  height,
   children,
   onClick,
   ...props
@@ -27,8 +23,6 @@ export const BaseButton = ({
     <Button
       variant="outline"
       type={type}
-      width={width}
-      height={height}
       color={background}
       borderColor={border}
       _hover={{ background: backgroundHover }}

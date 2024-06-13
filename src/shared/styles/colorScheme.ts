@@ -1,5 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
-import { styleToken } from '@/shared';
+import { styleToken } from '@/shared/styles/styleToken';
 
 export const customTheme = extendTheme({
   colors: {

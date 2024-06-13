@@ -3,5 +3,5 @@
  */
 
 export * from './GlobalStyles';
+export * from './colorScheme';
 export * from './styleToken';
-export * from './colorScheme.ts';
