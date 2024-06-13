@@ -40,44 +40,36 @@ export const Home = () => (
         회원가입
       </BaseButton>
     </Flex>
-    <Flex direction="column" justifyContent="center" alignItems="center" gap="12px" margin="20px">
+    <Flex direction="row" justifyContent="center" alignItems="center" gap="20px" marginTop="20px">
       <button
         type="button"
         style={{
-          width: '300px',
+          width: '45px',
           height: '45px',
+          backgroundColor: styleToken.color.kakao,
+          borderRadius: '50%',
         }}
       >
-        <img src="/src/assets/aouth/kakao/kakao_login_large_wide.png" alt="kakao_login" />
-      </button>
-      <button
-        type="button"
-        style={{
-          width: '300px',
-          height: '45px',
-          backgroundColor: styleToken.color.naver,
-        }}
-      >
-        <Flex direction="row" justifyContent="flex-start" alignItems="center">
+        <Flex direction="column" justifyContent="center" alignItems="center">
           <img
-            src="/src/assets/aouth/naver/btnG_아이콘사각.png"
-            alt="naver_login"
+            src="/src/assets/aouth/kakao/kakao_logo.svg"
+            alt="kakao_login"
             style={{
-              width: '40px',
-              height: '40px',
-              marginLeft: '4px',
+              width: '20px',
+              height: '20px',
             }}
           />
-          <Typography
-            variant="subtitle1"
-            color={styleToken.color.white}
-            style={{
-              flex: '1',
-            }}
-          >
-            네이버 로그인
-          </Typography>
         </Flex>
+      </button>
+      <button type="button">
+        <img
+          src="/src/assets/aouth/naver/btnG_아이콘원형.png"
+          alt="naver_login"
+          style={{
+            width: '45px',
+            height: '45px',
+          }}
+        />
       </button>
     </Flex>
   </HomeContainer>
