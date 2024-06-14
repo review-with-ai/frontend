@@ -4,6 +4,7 @@ import { customTheme, Typography, TypographyVariant } from '@/shared';
 
 type BaseButtonProps = {
   type: 'button' | 'submit' | 'reset';
+  theme: keyof typeof customTheme.colors;
   font?: TypographyVariant;
   img?: React.ReactNode;
   children?: string;
@@ -12,21 +13,22 @@ type BaseButtonProps = {
 
 export const BaseButton = ({
   type,
+  theme,
   font,
   img,
   children,
   onClick,
   ...props
 }: PropsWithChildren<BaseButtonProps & ButtonProps>) => {
-  const { border, background, backgroundHover } = customTheme.colors.gray;
+  const { border, background, backgroundHover } = customTheme.colors[theme];
   const typographyVariant = font ?? 'h5';
 
   return (
     <Button
       variant="outline"
       type={type}
-      color={background}
       borderColor={border}
+      backgroundColor={background}
       _hover={{ background: backgroundHover }}
       onClick={onClick}
       {...props}

@@ -1,7 +1,7 @@
-import { Container, Flex } from '@chakra-ui/react';
-import styled from '@emotion/styled';
+import { Flex } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-import { BaseButton, PATH, styleToken, Typography } from '@/shared';
+import { PATH, styleToken } from '@/shared';
+import { BaseButton, HomeContainer, Typography } from '@/shared/components';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -39,6 +39,7 @@ export const Home = () => {
       <Flex direction="column" gap="14px">
         <BaseButton
           type="button"
+          theme="gray"
           style={{
             width: '300px',
             height: '40px',
@@ -52,6 +53,7 @@ export const Home = () => {
         </BaseButton>
         <BaseButton
           type="button"
+          theme="gray"
           style={{
             width: '300px',
             height: '40px',
@@ -67,6 +69,7 @@ export const Home = () => {
       <Flex direction="row" justifyContent="center" alignItems="center" gap="20px" marginTop="20px">
         <BaseButton
           type="button"
+          theme="gray"
           style={{
             width: '45px',
             height: '45px',
@@ -86,6 +89,7 @@ export const Home = () => {
         />
         <BaseButton
           type="button"
+          theme="gray"
           style={{
             width: '45px',
             height: '45px',
@@ -105,19 +109,3 @@ export const Home = () => {
     </HomeContainer>
   );
 };
-
-const HomeContainer = styled(Container)`
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  //border: 1px solid #1ea7fd;
-`;

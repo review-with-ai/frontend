@@ -8,5 +8,10 @@ export const customTheme = extendTheme({
       background: `${styleToken.color.white}`,
       backgroundHover: `${styleToken.color.gray100}`,
     },
-  },
+    active: {
+      border: 'none',
+      background: `${styleToken.color.naver}80`,
+      backgroundHover: `${styleToken.color.naver}`,
+    },
+  } as const,
 });
