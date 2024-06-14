@@ -50,7 +50,7 @@ type TypographyProps = {
   fontSize?: string;
   fontWeight?: number;
   fontFamily?: string;
-  children: string;
+  children: React.ReactNode;
 } & HTMLAttributes<HTMLElement>;
 
 const getFontFamily = (variant: TypographyVariant) => {

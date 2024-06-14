@@ -1,13 +1,9 @@
 import { Flex } from '@chakra-ui/react';
-import { BaseButton, HomeContainer, Input, styleToken, Typography } from '@/shared';
+import { BaseButton, ErrorMessage, HomeContainer, Input, styleToken, Typography } from '@/shared';
 
 export const Login = () => {
   const handleClickLogin = () => {
     console.log('login');
-  };
-
-  const handleClickReset = () => {
-    console.log('reset');
   };
 
   return (
@@ -37,15 +33,6 @@ export const Login = () => {
               height: '46px',
             }}
           />
-          <button type="button" onClick={handleClickReset}>
-            <img
-              src="src/assets/icon/close.svg"
-              alt="delete"
-              style={{
-                padding: '10px',
-              }}
-            />
-          </button>
         </Flex>
         <Flex
           direction="row"
@@ -61,15 +48,6 @@ export const Login = () => {
               height: '46px',
             }}
           />
-          <button type="button" onClick={handleClickReset}>
-            <img
-              src="src/assets/icon/close.svg"
-              alt="delete"
-              style={{
-                padding: '10px',
-              }}
-            />
-          </button>
         </Flex>
       </Flex>
       <BaseButton
@@ -85,6 +63,7 @@ export const Login = () => {
       >
         로그인
       </BaseButton>
+      <ErrorMessage message={'이메일 또는 비밀번호를 잘못 입력했습니다.\n입력하신 내용을 다시 확인해주세요.'} />
     </HomeContainer>
   );
 };
