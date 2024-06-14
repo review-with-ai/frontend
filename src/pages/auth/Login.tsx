@@ -28,6 +28,7 @@ export const Login = () => {
           borderRadius="6px"
         >
           <Input
+            type="email"
             placeholder="이메일"
             style={{
               height: '46px',
@@ -43,6 +44,7 @@ export const Login = () => {
           borderRadius="6px"
         >
           <Input
+            type="password"
             placeholder="비밀번호"
             style={{
               height: '46px',
@@ -63,7 +65,12 @@ export const Login = () => {
       >
         로그인
       </BaseButton>
-      <ErrorMessage message={'이메일 또는 비밀번호를 잘못 입력했습니다.\n입력하신 내용을 다시 확인해주세요.'} />
+      <ErrorMessage
+        message={'이메일 또는 비밀번호를 잘못 입력했습니다.\n입력하신 내용을 다시 확인해주세요.'}
+        style={{
+          marginTop: '20px',
+        }}
+      />
     </HomeContainer>
   );
 };
