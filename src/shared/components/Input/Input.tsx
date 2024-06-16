@@ -1,19 +1,16 @@
-import { HTMLAttributes, PropsWithChildren } from 'react';
+import { forwardRef, HTMLAttributes } from 'react';
 import { Input as ChakraInput, InputProps as ChakraInputProps } from '@chakra-ui/react';
 
 type InputProps = {
   type: HTMLInputElement['type'];
   placeholder?: string;
   isDisabled?: boolean;
-} & HTMLAttributes<HTMLInputElement>;
+} & HTMLAttributes<HTMLInputElement> &
+  ChakraInputProps;
 
-export const Input = ({
-  type,
-  placeholder,
-  isDisabled,
-  ...props
-}: PropsWithChildren<InputProps & ChakraInputProps>) => (
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ type, placeholder, isDisabled, ...props }, ref) => (
   <ChakraInput
+    ref={ref}
     type={type}
     padding="14px 17px 13px"
     borderRadius="6px"
@@ -26,4 +23,4 @@ export const Input = ({
     isDisabled={isDisabled}
     {...props}
   />
-);
+));
