@@ -4,6 +4,7 @@
 
 export * from './Body';
 export * from './HomeAside';
+export * from './HomeContainer';
 export * from './Layout';
 export * from './Navigation';
 export * from './Page';
