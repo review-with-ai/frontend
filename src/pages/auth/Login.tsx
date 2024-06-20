@@ -1,6 +1,17 @@
 import { Box, Flex } from '@chakra-ui/react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { BaseButton, ErrorMessage, HomeContainer, Input, styleToken, Typography } from '@/shared';
+import { useNavigate } from 'react-router-dom';
+import {
+  BaseButton,
+  ErrorMessage,
+  handleAxiosError,
+  HomeContainer,
+  http,
+  Input,
+  PATH,
+  styleToken,
+  Typography,
+} from '@/shared';
 
 type LoginInput = {
   email: string;
@@ -8,6 +19,7 @@ type LoginInput = {
 };
 
 export const Login = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -15,8 +27,21 @@ export const Login = () => {
     formState: { errors },
   } = useForm<LoginInput>();
 
+  const postLogin = async (data: LoginInput) => {
+    try {
+      const responseLogin = await http.post('/api/v1/login', data);
+      if (responseLogin.data?.code === 'LOGIN_401_5') {
+        alert('이메일 또는 비밀번호를 다시 확인해주세요.');
+      }
+      navigate(PATH.MAIN);
+    } catch (e) {
+      handleAxiosError(e);
+    }
+  };
+
   const handleClickLogin: SubmitHandler<LoginInput> = (data) => {
     console.log('login', data);
+    postLogin(data);
   };
 
   console.log(watch('email'));

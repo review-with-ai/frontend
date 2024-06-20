@@ -1,6 +1,20 @@
+import { useMemo } from 'react';
+import * as yup from 'yup';
 import { Box, Flex } from '@chakra-ui/react';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { BaseButton, ErrorMessage, HomeContainer, Input, styleToken, Typography } from '@/shared';
+import { useNavigate } from 'react-router-dom';
+import {
+  BaseButton,
+  ErrorMessage,
+  handleAxiosError,
+  HomeContainer,
+  Input,
+  PATH,
+  styleToken,
+  Typography,
+} from '@/shared';
+import { http } from '@/shared/api';
 
 type SignupInput = {
   email: string;
@@ -10,19 +24,69 @@ type SignupInput = {
   nickname: string;
 };
 
+const validationSchema = yup
+  .object({
+    email: yup.string().email('유효한 이메일 형식이 아닙니다.').required('이메일을 입력해주세요.'),
+    password: yup
+      .string()
+      .min(8, '8글자 이상 입력해주세요.')
+      .matches(
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+        '한 개 이상의 영문자, 숫자, 특수문자를 포함해야 합니다.',
+      )
+      .required('비밀번호를 입력해주세요.'),
+    passwordCheck: yup
+      .string()
+      .oneOf([yup.ref('password'), undefined], '비밀번호가 일치하지 않습니다.')
+      .required('비밀번호를 다시 입력해주세요.'),
+    name: yup
+      .string()
+      .matches(/^[가-힣]{2,10}$/, '2글자 이상 10글자 이하의 한글만 가능합니다.')
+      .required('이름을 입력해주세요.'),
+    nickname: yup
+      .string()
+      .matches(/^[가-힣]{2,10}$/, '2글자 이상 10글자 이하의 한글만 가능합니다.')
+      .required('닉네임을 입력해주세요.'),
+  })
+  .required();
+
 export const Signup = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm<SignupInput>();
+  } = useForm<SignupInput>({
+    resolver: yupResolver(validationSchema),
+  });
+
+  const postSignup = async (data: SignupInput) => {
+    try {
+      const responseSignup = await http.post<{
+        data: {
+          code: string;
+          reason: string;
+        };
+      }>('/api/v1/users', data);
+      if (responseSignup.data?.code === 'USER_400_1') {
+        alert(responseSignup.data.reason);
+        return;
+      }
+      navigate(PATH.MAIN);
+    } catch (e) {
+      const errorResponse = handleAxiosError(e);
+      if (errorResponse.reason) {
+        alert(errorResponse.reason);
+      }
+    }
+  };
 
   const handleClickSignup: SubmitHandler<SignupInput> = (data) => {
     console.log('signup', data);
+    postSignup(data);
   };
 
-  console.log(watch('email'));
+  const isDisabledSubmit = useMemo(() => Object.keys(errors).length > 0, [errors]);
 
   return (
     <HomeContainer>
@@ -63,11 +127,8 @@ export const Signup = () => {
             />
           </Flex>
           <Box height="20px">
-            {errors.password && (
-              <ErrorMessage
-                message="입력하신 내용을 다시 확인해주세요."
-                style={{ paddingBottom: '10px', marginTop: '-6px' }}
-              />
+            {errors.email && (
+              <ErrorMessage message={errors.email?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
             )}
           </Box>
           <Flex
@@ -89,10 +150,7 @@ export const Signup = () => {
           </Flex>
           <Box height="20px">
             {errors.password && (
-              <ErrorMessage
-                message="입력하신 내용을 다시 확인해주세요."
-                style={{ paddingBottom: '10px', marginTop: '-6px' }}
-              />
+              <ErrorMessage message={errors.password?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
             )}
           </Box>
           <Flex
@@ -113,9 +171,9 @@ export const Signup = () => {
             />
           </Flex>
           <Box height="20px">
-            {errors.password && (
+            {errors.passwordCheck && (
               <ErrorMessage
-                message="입력하신 내용을 다시 확인해주세요."
+                message={errors.passwordCheck?.message}
                 style={{ paddingBottom: '10px', marginTop: '-6px' }}
               />
             )}
@@ -138,11 +196,8 @@ export const Signup = () => {
             />
           </Flex>
           <Box height="20px">
-            {errors.password && (
-              <ErrorMessage
-                message="입력하신 내용을 다시 확인해주세요."
-                style={{ paddingBottom: '10px', marginTop: '-6px' }}
-              />
+            {errors.name && (
+              <ErrorMessage message={errors.name?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
             )}
           </Box>
           <Flex
@@ -163,17 +218,15 @@ export const Signup = () => {
             />
           </Flex>
           <Box height="20px">
-            {errors.password && (
-              <ErrorMessage
-                message="입력하신 내용을 다시 확인해주세요."
-                style={{ paddingBottom: '10px', marginTop: '-6px' }}
-              />
+            {errors.nickname && (
+              <ErrorMessage message={errors.nickname?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
             )}
           </Box>
         </Flex>
         <BaseButton
-          type="button"
+          type="submit"
           theme="active"
+          disabled={isDisabledSubmit}
           style={{
             width: '300px',
             height: '40px',

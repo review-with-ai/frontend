@@ -3,7 +3,7 @@ import { Flex } from '@chakra-ui/react';
 import { styleToken, Typography } from '@/shared';
 
 type ErrorMessageProps = {
-  message: string;
+  message: string | undefined;
 } & HTMLAttributes<HTMLDivElement>;
 
 export const ErrorMessage = ({ message, ...props }: ErrorMessageProps) => (

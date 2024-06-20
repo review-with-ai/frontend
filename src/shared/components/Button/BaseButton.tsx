@@ -8,6 +8,7 @@ type BaseButtonProps = {
   font?: TypographyVariant;
   img?: React.ReactNode;
   children?: string;
+  disabled?: boolean;
   onClick?: () => void;
 } & HTMLAttributes<HTMLButtonElement>;
 
@@ -17,6 +18,7 @@ export const BaseButton = ({
   font,
   img,
   children,
+  disabled,
   onClick,
   ...props
 }: PropsWithChildren<BaseButtonProps & ButtonProps>) => {
@@ -31,6 +33,7 @@ export const BaseButton = ({
       backgroundColor={background}
       _hover={{ background: backgroundHover }}
       onClick={onClick}
+      disabled={disabled}
       {...props}
     >
       {img || null}
