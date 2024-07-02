@@ -24,6 +24,7 @@ export const handleAxiosError = (error: any) => {
       axiosError.response?.data || {
         success: false,
         message: axiosError.message,
+        reason: undefined,
       }
     );
   }
@@ -31,5 +32,6 @@ export const handleAxiosError = (error: any) => {
   return {
     success: false,
     message: 'Unexpected error',
+    reason: undefined,
   };
 };

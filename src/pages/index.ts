@@ -3,3 +3,5 @@
  */
 
 export * from './Home';
+export * from './auth/index';
+export * from './main/index';

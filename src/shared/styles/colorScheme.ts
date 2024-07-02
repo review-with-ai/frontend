@@ -1,5 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
-import { styleToken } from '@/shared';
+import { styleToken } from '@/shared/styles/styleToken';
 
 export const customTheme = extendTheme({
   colors: {
@@ -8,5 +8,10 @@ export const customTheme = extendTheme({
       background: `${styleToken.color.white}`,
       backgroundHover: `${styleToken.color.gray100}`,
     },
-  },
+    active: {
+      border: 'none',
+      background: `${styleToken.color.blue}`,
+      backgroundHover: `${styleToken.color.hoverBlue}`,
+    },
+  } as const,
 });

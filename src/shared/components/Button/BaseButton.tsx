@@ -4,38 +4,46 @@ import { customTheme, Typography, TypographyVariant } from '@/shared';
 
 type BaseButtonProps = {
   type: 'button' | 'submit' | 'reset';
+  theme: keyof typeof customTheme.colors;
   font?: TypographyVariant;
-  width?: string;
-  height?: string;
-  children: string;
+  fontColor?: string;
+  img?: React.ReactNode;
+  children?: string;
+  disabled?: boolean;
   onClick?: () => void;
 } & HTMLAttributes<HTMLButtonElement>;
 
 export const BaseButton = ({
   type,
+  theme,
   font,
-  width,
-  height,
+  fontColor,
+  img,
   children,
+  disabled,
   onClick,
   ...props
 }: PropsWithChildren<BaseButtonProps & ButtonProps>) => {
+  const { border, background, backgroundHover } = customTheme.colors[theme];
   const typographyVariant = font ?? 'h5';
-  const { border, background, backgroundHover } = customTheme.colors.gray;
 
   return (
     <Button
       variant="outline"
       type={type}
-      width={width}
-      height={height}
-      color={background}
       borderColor={border}
+      backgroundColor={background}
       _hover={{ background: backgroundHover }}
       onClick={onClick}
+      disabled={disabled}
       {...props}
     >
-      <Typography variant={typographyVariant}>{children}</Typography>
+      {img || null}
+      {children ? (
+        <Typography variant={typographyVariant} color={fontColor}>
+          {children}
+        </Typography>
+      ) : null}
     </Button>
   );
 };

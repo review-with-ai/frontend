@@ -1,15 +1,19 @@
 const colors = {
-  white: '#fff',
-  black: '#222',
-  gray100: '#f7f7f7',
+  white: '#ffffff',
+  black: '#222222',
+  gray100: '#F7F7F7',
   gray200: '#E3E3E3',
   gray300: '#C7C7C7',
   gray400: '#707070',
   gray500: '#262626',
   gray600: '#131313',
-  shadow: 'rgba(0, 0, 0, 0.25)',
-  background: '#f1f4f8',
-  red: '#ff5757',
+  shadow: '#0000003F',
+  background: '#F1F4F8',
+  error: '#FF003E',
+  naver: '#03C75A',
+  kakao: '#FEE500',
+  blue: '#2284F5',
+  hoverBlue: '#207BE3',
 } as const;
 
 const fontSize = {

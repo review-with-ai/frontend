@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { Layout } from '@/shared';
+import { styleToken } from '@/shared/styles/styleToken';
 
 type PageProps = {
   children: React.ReactNode;
@@ -27,5 +28,5 @@ export const Page = ({ children }: PageProps) => {
 const Container = styled.div`
   width: 100vw;
   height: calc(var(--vh, 1vh) * 100);
-  background-color: #747bff;
+  background-color: ${styleToken.color.white};
 `;
