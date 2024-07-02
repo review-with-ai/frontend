@@ -63,20 +63,21 @@ export const Signup = () => {
   const postSignup = async (data: SignupInput) => {
     try {
       const responseSignup = await http.post<{
-        data: {
-          code: string;
-          reason: string;
-        };
+        code: string;
+        reason: string;
       }>('/api/v1/users', data);
       if (responseSignup.data?.code === 'USER_400_1') {
         alert(responseSignup.data.reason);
         return;
       }
+      alert('회원가입이 완료되었습니다.');
       navigate(PATH.MAIN);
     } catch (e) {
       const errorResponse = handleAxiosError(e);
       if (errorResponse.reason) {
         alert(errorResponse.reason);
+      } else {
+        alert(errorResponse.message);
       }
     }
   };
@@ -226,6 +227,7 @@ export const Signup = () => {
         <BaseButton
           type="submit"
           theme="active"
+          fontColor={styleToken.color.white}
           disabled={isDisabledSubmit}
           style={{
             width: '300px',

@@ -105,11 +105,13 @@ export const Login = () => {
         <BaseButton
           type="submit"
           theme="active"
+          fontColor={styleToken.color.white}
           style={{
             width: '300px',
             height: '40px',
             border: 'none',
             borderRadius: '6px',
+            color: styleToken.color.white,
           }}
         >
           로그인

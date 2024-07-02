@@ -12,6 +12,8 @@ const colors = {
   error: '#FF003E',
   naver: '#03C75A',
   kakao: '#FEE500',
+  blue: '#2284F5',
+  hoverBlue: '#207BE3',
 } as const;
 
 const fontSize = {

@@ -6,6 +6,7 @@ type BaseButtonProps = {
   type: 'button' | 'submit' | 'reset';
   theme: keyof typeof customTheme.colors;
   font?: TypographyVariant;
+  fontColor?: string;
   img?: React.ReactNode;
   children?: string;
   disabled?: boolean;
@@ -16,6 +17,7 @@ export const BaseButton = ({
   type,
   theme,
   font,
+  fontColor,
   img,
   children,
   disabled,
@@ -37,7 +39,11 @@ export const BaseButton = ({
       {...props}
     >
       {img || null}
-      {children ? <Typography variant={typographyVariant}>{children}</Typography> : null}
+      {children ? (
+        <Typography variant={typographyVariant} color={fontColor}>
+          {children}
+        </Typography>
+      ) : null}
     </Button>
   );
 };
