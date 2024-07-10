@@ -5,5 +5,6 @@ export const PATH = {
   OAUTH_KAKAO: '/oauth/kakao',
   OAUTH_NAVER: '/oauth/naver',
   MAIN: '/main',
-  USER: '/user',
+  SETTING: '/setting',
+  ACCOUNT: '/setting/account',
 };

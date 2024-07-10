@@ -13,5 +13,10 @@ export const customTheme = extendTheme({
       background: `${styleToken.color.blue}`,
       backgroundHover: `${styleToken.color.hoverBlue}`,
     },
+    alert: {
+      border: 'none',
+      background: `${styleToken.color.blue}`,
+      backgroundHover: `${styleToken.color.hoverBlue}`,
+    },
   } as const,
 });

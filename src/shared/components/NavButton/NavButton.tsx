@@ -12,6 +12,7 @@ export const NavButton = () => (
       style={{
         border: `1px solid ${styleToken.color.gray300}`,
         borderRadius: '50%',
+        cursor: 'pointer',
       }}
     >
       <img src="/src/assets/note/add_memo.png" alt="새로운 노트 작성" width={30} height={30} />

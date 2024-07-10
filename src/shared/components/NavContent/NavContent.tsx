@@ -5,7 +5,14 @@ import { Typography } from '@/shared';
 export const NavContent = () => (
   <Container>
     <Flex width="100%" height="auto" flexDirection="column" justifyContent="center" alignItems="flex-start" gap="12px">
-      <Flex flexDirection="row" justifyContent="flex-start" alignItems="center">
+      <Flex
+        flexDirection="row"
+        justifyContent="flex-start"
+        alignItems="center"
+        style={{
+          cursor: 'pointer',
+        }}
+      >
         <img src="/src/assets/icon/home.svg" alt="홈" width={20} height={20} />
         <Typography
           variant="subtitle1"
