@@ -1,10 +1,10 @@
 export const PATH = {
-  HOME: '/',
+  MAIN: '/',
   LOG_IN: '/login',
   SIGN_UP: '/signup',
   OAUTH_KAKAO: '/oauth/kakao',
   OAUTH_NAVER: '/oauth/naver',
-  MAIN: '/main',
+  HOME: '/home',
   SETTING: '/setting',
   ACCOUNT: '/setting/account',
 };

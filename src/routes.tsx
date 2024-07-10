@@ -6,12 +6,12 @@ export const routes = [
   {
     element: <RouterLayout />,
     children: [
-      { path: PATH.HOME, element: <Home /> },
+      { path: PATH.MAIN, element: <Main /> },
       { path: PATH.LOG_IN, element: <Login /> },
       { path: PATH.SIGN_UP, element: <Signup /> },
       { path: PATH.OAUTH_KAKAO, element: <AuthKakao /> },
       { path: PATH.OAUTH_NAVER, element: <AuthNaver /> },
-      { path: PATH.MAIN, element: <Main /> },
+      { path: PATH.HOME, element: <Home /> },
       { path: PATH.ACCOUNT, element: <User /> },
       { path: PATH.SETTING, element: <User /> },
     ],

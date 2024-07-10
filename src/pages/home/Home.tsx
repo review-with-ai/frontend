@@ -1,7 +1,7 @@
 import { Body } from '@/shared';
 
-export const Main = () => (
+export const Home = () => (
   <Body>
-    <h1>main</h1>
+    <h1>home</h1>
   </Body>
 );
