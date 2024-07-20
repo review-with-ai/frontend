@@ -2,19 +2,8 @@ import { useEffect, useState } from 'react';
 import { Box, Flex } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
-import {
-  BaseButton,
-  Body,
-  handleAxiosError,
-  http,
-  NavButton,
-  NavContent,
-  NavFooter,
-  Navigation,
-  PATH,
-  styleToken,
-  Typography,
-} from '@/shared';
+import { BaseButton, Body, handleAxiosError, http, PATH, styleToken, Typography } from '@/shared';
+import { Nav } from '@/shared/components/Nav';
 
 type User = {
   id: number;
@@ -35,11 +24,6 @@ export const Setting = () => {
     status: '',
     hasSubscribed: false,
   });
-
-  const handleClickSetting = () => {
-    console.log('setting');
-    navigate(PATH.ACCOUNT);
-  };
 
   const handleClickLogout = () => {
     console.log('logout');
@@ -62,12 +46,7 @@ export const Setting = () => {
 
   return (
     <>
-      <Navigation>
-        <Typography variant="h2">Review with Ai</Typography>
-        <NavButton />
-        <NavContent />
-        <NavFooter onLogout={handleClickLogout} onSetting={handleClickSetting} />
-      </Navigation>
+      <Nav />
       <Body>
         <Container>
           <Box

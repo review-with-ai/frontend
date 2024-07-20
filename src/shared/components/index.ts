@@ -6,6 +6,7 @@ export * from './Button/index';
 export * from './Error/index';
 export * from './Input/index';
 export * from './Layout/index';
+export * from './Nav/index';
 export * from './NavButton/index';
 export * from './NavContent/index';
 export * from './NavFooter/index';

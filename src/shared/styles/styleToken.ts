@@ -9,6 +9,7 @@ const colors = {
   gray600: '#131313',
   shadow: '#0000003F',
   background: '#F1F4F8',
+  hover: '#F7F7F7',
   error: '#FF003E',
   naver: '#03C75A',
   kakao: '#FEE500',
