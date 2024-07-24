@@ -10,4 +10,5 @@ export * from './Nav/index';
 export * from './NavButton/index';
 export * from './NavContent/index';
 export * from './NavFooter/index';
+export * from './NavHeader/index';
 export * from './Typographt/index';

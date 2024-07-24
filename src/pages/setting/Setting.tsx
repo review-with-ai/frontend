@@ -37,6 +37,8 @@ export const Setting = () => {
       setUser(responseInfo.data);
     } catch (e) {
       handleAxiosError(e);
+      alert('로그인이 필요한 서비스입니다.');
+      // navigate(PATH.MAIN);
     }
   };
 
@@ -92,7 +94,7 @@ export const Setting = () => {
                 >
                   이메일
                 </Typography>
-                <Typography variant="subtitle1">qwerty123@naver.com</Typography>
+                <Typography variant="subtitle1">{user.email}</Typography>
               </Flex>
               <Flex>
                 <Typography
@@ -103,7 +105,7 @@ export const Setting = () => {
                 >
                   이름
                 </Typography>
-                <Typography variant="subtitle1">홍길동</Typography>
+                <Typography variant="subtitle1">{user.name}</Typography>
               </Flex>
               <Flex>
                 <Typography
@@ -114,7 +116,7 @@ export const Setting = () => {
                 >
                   닉네임
                 </Typography>
-                <Typography variant="subtitle1">별명</Typography>
+                <Typography variant="subtitle1">{user.nickname}</Typography>
               </Flex>
               <Flex>
                 <Typography

@@ -5,6 +5,6 @@
 export * from './Main';
 export * from './auth/index';
 export * from './home/index';
+export * from './note/index';
 export * from './setting/index';
 export * from './trash/index';
-export * from './note/index';

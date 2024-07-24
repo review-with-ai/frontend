@@ -31,6 +31,19 @@ export const Nav = () => {
     navigate(PATH.MAIN);
   };
 
+  // const getCategories = async () => {
+  //   try {
+  //     const response = await http.get('/api/v1/categories');
+  //     console.log(response);
+  //   } catch (e) {
+  //     handleAxiosError(e);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getCategories();
+  // }, []);
+
   return (
     <Navigation>
       <Container>
