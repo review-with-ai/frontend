@@ -4,6 +4,7 @@ import { BASE_URL, RUNTIME_ENV } from '@/shared/constants';
 export const client = axios.create({
   baseURL: BASE_URL[RUNTIME_ENV],
   timeout: 1000,
+  withCredentials: true,
 });
 
 interface httpClient extends AxiosRequestConfig {
@@ -16,7 +17,13 @@ interface httpClient extends AxiosRequestConfig {
 
 export const http: httpClient = client;
 
-export const handleAxiosError = (error: any) => {
+type AxiosErrorResponse = {
+  success?: boolean;
+  message?: string;
+  reason?: string;
+};
+
+export const handleAxiosError = (error: any): AxiosErrorResponse => {
   if (axios.isAxiosError(error)) {
     const axiosError = error as AxiosError;
     console.error('Axios error: ', axiosError);

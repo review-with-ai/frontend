@@ -1,20 +1,21 @@
-import { useMemo } from 'react';
 import * as yup from 'yup';
 import { Box, Flex } from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { LoginInput } from '@/pages';
 import {
   BaseButton,
   ErrorMessage,
   handleAxiosError,
   HomeContainer,
+  http,
   Input,
+  NavHeader,
   PATH,
   styleToken,
   Typography,
 } from '@/shared';
-import { http } from '@/shared/api';
 
 type SignupInput = {
   email: string;
@@ -55,23 +56,30 @@ export const Signup = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<SignupInput>({
     resolver: yupResolver(validationSchema),
+    mode: 'onChange',
   });
 
   const postSignup = async (data: SignupInput) => {
     try {
       const responseSignup = await http.post<{
-        code: string;
-        reason: string;
+        status: number;
+        message: string;
+        data: {
+          code: string;
+          reason: string;
+        };
       }>('/api/v1/users', data);
-      if (responseSignup.data?.code === 'USER_400_1') {
-        alert(responseSignup.data.reason);
-        return;
+      if (responseSignup.status === 200) {
+        alert('회원가입이 완료되었습니다.');
       }
-      alert('회원가입이 완료되었습니다.');
-      navigate(PATH.MAIN);
+      await postLogin({
+        email: data.email,
+        password: data.password,
+      });
+      navigate(PATH.HOME);
     } catch (e) {
       const errorResponse = handleAxiosError(e);
       if (errorResponse.reason) {
@@ -82,163 +90,180 @@ export const Signup = () => {
     }
   };
 
+  const postLogin = async (data: LoginInput) => {
+    try {
+      const responseLogin = await http.post('/api/v1/login', data);
+      if (responseLogin.status === 200) {
+        navigate(PATH.HOME);
+      }
+    } catch (e) {
+      handleAxiosError(e);
+      alert('이메일 또는 비밀번호를 다시 확인해주세요.');
+    }
+  };
+
   const handleClickSignup: SubmitHandler<SignupInput> = (data) => {
     console.log('signup', data);
     postSignup(data);
   };
 
-  const isDisabledSubmit = useMemo(() => Object.keys(errors).length > 0, [errors]);
+  const handleClickBack = () => {
+    navigate(-1);
+  };
 
   return (
-    <HomeContainer>
-      <Typography
-        variant="h1"
-        style={{
-          width: '100%',
-          margin: '20px 0',
-          textAlign: 'center',
-        }}
-      >
-        회원가입
-      </Typography>
-      <form onSubmit={handleSubmit(handleClickSignup)}>
-        <Flex
-          direction="column"
-          justifyContent="flex-start"
-          alignItems="center"
-          width="100%"
-          gap="14px"
-          margin="20px 0"
-        >
-          <Flex
-            direction="row"
-            justifyContent="flex-start"
-            alignItems="center"
-            width="300px"
-            border={`1px solid ${styleToken.color.gray200}`}
-            borderRadius="6px"
-          >
-            <Input
-              type="email"
-              placeholder="이메일"
-              style={{
-                height: '46px',
-              }}
-              {...register('email', { required: true })}
-            />
-          </Flex>
-          <Box height="20px">
-            {errors.email && (
-              <ErrorMessage message={errors.email?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
-            )}
-          </Box>
-          <Flex
-            direction="row"
-            justifyContent="flex-start"
-            alignItems="center"
-            width="300px"
-            border={`1px solid ${styleToken.color.gray200}`}
-            borderRadius="6px"
-          >
-            <Input
-              type="password"
-              placeholder="비밀번호"
-              style={{
-                height: '46px',
-              }}
-              {...register('password', { required: true })}
-            />
-          </Flex>
-          <Box height="20px">
-            {errors.password && (
-              <ErrorMessage message={errors.password?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
-            )}
-          </Box>
-          <Flex
-            direction="row"
-            justifyContent="flex-start"
-            alignItems="center"
-            width="300px"
-            border={`1px solid ${styleToken.color.gray200}`}
-            borderRadius="6px"
-          >
-            <Input
-              type="password"
-              placeholder="비밀번호 확인"
-              style={{
-                height: '46px',
-              }}
-              {...register('passwordCheck', { required: true })}
-            />
-          </Flex>
-          <Box height="20px">
-            {errors.passwordCheck && (
-              <ErrorMessage
-                message={errors.passwordCheck?.message}
-                style={{ paddingBottom: '10px', marginTop: '-6px' }}
-              />
-            )}
-          </Box>
-          <Flex
-            direction="row"
-            justifyContent="flex-start"
-            alignItems="center"
-            width="300px"
-            border={`1px solid ${styleToken.color.gray200}`}
-            borderRadius="6px"
-          >
-            <Input
-              type="text"
-              placeholder="이름"
-              style={{
-                height: '46px',
-              }}
-              {...register('name', { required: true })}
-            />
-          </Flex>
-          <Box height="20px">
-            {errors.name && (
-              <ErrorMessage message={errors.name?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
-            )}
-          </Box>
-          <Flex
-            direction="row"
-            justifyContent="flex-start"
-            alignItems="center"
-            width="300px"
-            border={`1px solid ${styleToken.color.gray200}`}
-            borderRadius="6px"
-          >
-            <Input
-              type="text"
-              placeholder="닉네임"
-              style={{
-                height: '46px',
-              }}
-              {...register('nickname', { required: true })}
-            />
-          </Flex>
-          <Box height="20px">
-            {errors.nickname && (
-              <ErrorMessage message={errors.nickname?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
-            )}
-          </Box>
-        </Flex>
-        <BaseButton
-          type="submit"
-          theme="active"
-          fontColor={styleToken.color.white}
-          disabled={isDisabledSubmit}
+    <Flex flexDirection="column" width="100%" height="100%">
+      <NavHeader onBack={handleClickBack} />
+      <HomeContainer>
+        <Typography
+          variant="h1"
           style={{
-            width: '300px',
-            height: '40px',
-            border: 'none',
-            borderRadius: '6px',
+            width: '100%',
+            margin: '20px 0',
+            textAlign: 'center',
           }}
         >
           회원가입
-        </BaseButton>
-      </form>
-    </HomeContainer>
+        </Typography>
+        <form onSubmit={handleSubmit(handleClickSignup)}>
+          <Flex
+            direction="column"
+            justifyContent="flex-start"
+            alignItems="center"
+            width="100%"
+            gap="14px"
+            margin="20px 0"
+          >
+            <Flex
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              width="300px"
+              border={`1px solid ${styleToken.color.gray200}`}
+              borderRadius="6px"
+            >
+              <Input
+                type="email"
+                placeholder="이메일"
+                style={{
+                  height: '46px',
+                }}
+                {...register('email', { required: true })}
+              />
+            </Flex>
+            <Box height="20px">
+              {errors.email && (
+                <ErrorMessage message={errors.email?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
+              )}
+            </Box>
+            <Flex
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              width="300px"
+              border={`1px solid ${styleToken.color.gray200}`}
+              borderRadius="6px"
+            >
+              <Input
+                type="password"
+                placeholder="비밀번호"
+                style={{
+                  height: '46px',
+                }}
+                {...register('password', { required: true })}
+              />
+            </Flex>
+            <Box height="20px">
+              {errors.password && (
+                <ErrorMessage message={errors.password?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
+              )}
+            </Box>
+            <Flex
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              width="300px"
+              border={`1px solid ${styleToken.color.gray200}`}
+              borderRadius="6px"
+            >
+              <Input
+                type="password"
+                placeholder="비밀번호 확인"
+                style={{
+                  height: '46px',
+                }}
+                {...register('passwordCheck', { required: true })}
+              />
+            </Flex>
+            <Box height="20px">
+              {errors.passwordCheck && (
+                <ErrorMessage
+                  message={errors.passwordCheck?.message}
+                  style={{ paddingBottom: '10px', marginTop: '-6px' }}
+                />
+              )}
+            </Box>
+            <Flex
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              width="300px"
+              border={`1px solid ${styleToken.color.gray200}`}
+              borderRadius="6px"
+            >
+              <Input
+                type="text"
+                placeholder="이름"
+                style={{
+                  height: '46px',
+                }}
+                {...register('name', { required: true })}
+              />
+            </Flex>
+            <Box height="20px">
+              {errors.name && (
+                <ErrorMessage message={errors.name?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
+              )}
+            </Box>
+            <Flex
+              direction="row"
+              justifyContent="flex-start"
+              alignItems="center"
+              width="300px"
+              border={`1px solid ${styleToken.color.gray200}`}
+              borderRadius="6px"
+            >
+              <Input
+                type="text"
+                placeholder="닉네임"
+                style={{
+                  height: '46px',
+                }}
+                {...register('nickname', { required: true })}
+              />
+            </Flex>
+            <Box height="20px">
+              {errors.nickname && (
+                <ErrorMessage message={errors.nickname?.message} style={{ paddingBottom: '10px', marginTop: '-6px' }} />
+              )}
+            </Box>
+          </Flex>
+          <BaseButton
+            type="submit"
+            theme="active"
+            fontColor={styleToken.color.white}
+            isDisabled={!isValid}
+            style={{
+              width: '300px',
+              height: '40px',
+              border: 'none',
+              borderRadius: '6px',
+            }}
+          >
+            회원가입
+          </BaseButton>
+        </form>
+      </HomeContainer>
+    </Flex>
   );
 };

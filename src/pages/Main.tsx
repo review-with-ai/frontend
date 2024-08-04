@@ -1,27 +1,27 @@
 import { Flex } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-import { PATH, styleToken } from '@/shared';
+import { http, PATH, styleToken } from '@/shared';
 import { BaseButton, HomeContainer, Typography } from '@/shared/components';
 
-export const Home = () => {
+export const Main = () => {
   const navigate = useNavigate();
 
   const handleClickLogin = () => {
-    console.log('login');
     navigate(PATH.LOG_IN);
   };
 
   const handleClickSginup = () => {
-    console.log('signup');
     navigate(PATH.SIGN_UP);
   };
 
   const handleClickKakaoLogin = () => {
     console.log('kakao');
+    http.get('/api/v1/oauth2/authorization/kakao');
   };
 
   const handleClickNaverLogin = () => {
     console.log('naver');
+    http.get('/api/v1/oauth2/authorization/naver');
   };
 
   return (

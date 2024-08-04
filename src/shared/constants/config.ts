@@ -2,5 +2,5 @@ export const RUNTIME_ENV = process.env.NODE_ENV === 'development' ? 'development
 
 export const BASE_URL = {
   development: 'http://dev.api.ai-review.site',
-  production: 'http://dev.api.ai-review.site',
+  production: 'http://api.ai-review.site',
 };
