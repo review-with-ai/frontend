@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Box, Flex } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
@@ -37,14 +37,14 @@ export const Setting = () => {
       setUser(responseInfo.data);
     } catch (e) {
       handleAxiosError(e);
-      alert('로그인이 필요한 서비스입니다.');
+      // alert('로그인이 필요한 서비스입니다.');
       // navigate(PATH.MAIN);
     }
   };
 
-  useEffect(() => {
-    getUserInfo();
-  }, []);
+  // useEffect(() => {
+  // getUserInfo();
+  // }, []);
 
   return (
     <>

@@ -1,7 +1,7 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
-import { NavButton, NavContent, NavFooter, Navigation, PATH, Typography } from '@/shared';
+import { NavButton, NavContent, NavFooter, Navigation, PATH } from '@/shared';
 
 export const Nav = () => {
   const navigate = useNavigate();
@@ -48,12 +48,15 @@ export const Nav = () => {
     <Navigation>
       <Container>
         <Box
+          width="100%"
+          height="auto"
           onClick={handleClickHome}
           style={{
+            paddingLeft: '10px',
             cursor: 'pointer',
           }}
         >
-          <Typography variant="h2">복습할고양</Typography>
+          <Image src="/src/assets/logo.svg" alt="복습할고양 로고" />
         </Box>
         <NavButton onNote={handleClickNewNote} />
         <NavContent onHome={handleClickHome} onTrash={handleClickTrash} />
