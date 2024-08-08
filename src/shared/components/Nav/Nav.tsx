@@ -1,4 +1,4 @@
-import { Box, Image } from '@chakra-ui/react';
+import { Flex, Image } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import { NavButton, NavContent, NavFooter, Navigation, PATH } from '@/shared';
@@ -47,17 +47,17 @@ export const Nav = () => {
   return (
     <Navigation>
       <Container>
-        <Box
+        <Flex
           width="100%"
-          height="auto"
           onClick={handleClickHome}
           style={{
-            paddingLeft: '10px',
+            padding: '0 20px 10px',
+            paddingLeft: '24px',
             cursor: 'pointer',
           }}
         >
           <Image src="/src/assets/logo.svg" alt="복습할고양 로고" />
-        </Box>
+        </Flex>
         <NavButton onNote={handleClickNewNote} />
         <NavContent onHome={handleClickHome} onTrash={handleClickTrash} />
         <NavFooter onLogout={handleClickLogout} onSetting={handleClickSetting} />
@@ -70,5 +70,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   flex: 1, 1;
 `;

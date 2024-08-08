@@ -9,5 +9,7 @@ export const Body = ({ children }: NoteProps) => <Container>{children}</Containe
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+  padding: 0 47px;
+  padding-right: 35px;
   border: 1px solid purple;
 `;

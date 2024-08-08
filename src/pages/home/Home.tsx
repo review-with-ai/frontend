@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Box } from '@chakra-ui/react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '@/shared/components/Calendar/CustomCalendar.css';
@@ -18,17 +17,8 @@ export const Home = () => {
     <>
       <Nav />
       <Body>
-        <Box
-          style={{
-            margin: 0,
-            padding: '0 47px',
-            paddingRight: '35px',
-            width: '100%',
-          }}
-        >
-          <h1>home</h1>
-          <NoteList />
-        </Box>
+        <h1>home</h1>
+        <NoteList />
       </Body>
       <HomeAside>
         <Calendar
@@ -38,9 +28,6 @@ export const Home = () => {
           calendarType="gregory"
           value={date}
           onChange={onChangeDate}
-          style={{
-            border: 'none',
-          }}
         />
       </HomeAside>
     </>
