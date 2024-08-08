@@ -7,6 +7,7 @@ const colors = {
   gray400: '#707070',
   gray500: '#262626',
   gray600: '#131313',
+  noteList: '#909090',
   shadow: '#0000003F',
   background: '#F1F4F8',
   hover: '#F7F7F7',

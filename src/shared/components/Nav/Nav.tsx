@@ -1,7 +1,7 @@
-import { Box } from '@chakra-ui/react';
+import { Flex, Image } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
-import { NavButton, NavContent, NavFooter, Navigation, PATH, Typography } from '@/shared';
+import { NavButton, NavContent, NavFooter, Navigation, PATH } from '@/shared';
 
 export const Nav = () => {
   const navigate = useNavigate();
@@ -47,14 +47,17 @@ export const Nav = () => {
   return (
     <Navigation>
       <Container>
-        <Box
+        <Flex
+          width="100%"
           onClick={handleClickHome}
           style={{
+            padding: '0 20px 10px',
+            paddingLeft: '24px',
             cursor: 'pointer',
           }}
         >
-          <Typography variant="h2">복습할고양</Typography>
-        </Box>
+          <Image src="/src/assets/logo.svg" alt="복습할고양 로고" />
+        </Flex>
         <NavButton onNote={handleClickNewNote} />
         <NavContent onHome={handleClickHome} onTrash={handleClickTrash} />
         <NavFooter onLogout={handleClickLogout} onSetting={handleClickSetting} />
@@ -67,5 +70,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   flex: 1, 1;
 `;

@@ -1,7 +1,7 @@
-import { Flex } from '@chakra-ui/react';
+import { Image, Flex, Box } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { http, PATH, styleToken } from '@/shared';
-import { BaseButton, HomeContainer, Typography } from '@/shared/components';
+import { BaseButton, HomeContainer } from '@/shared/components';
 
 export const Main = () => {
   const navigate = useNavigate();
@@ -26,16 +26,16 @@ export const Main = () => {
 
   return (
     <HomeContainer>
-      <Typography
-        variant="h1"
+      <Box
+        width="300px"
+        height="auto"
         style={{
-          width: '100%',
-          margin: '20px 0',
-          textAlign: 'center',
+          paddingLeft: '14px',
+          marginBottom: '30px',
         }}
       >
-        Review with AI
-      </Typography>
+        <Image src="/src/assets/logo.svg" alt="복습할고양 로고" />
+      </Box>
       <Flex direction="column" gap="14px">
         <BaseButton
           type="button"
