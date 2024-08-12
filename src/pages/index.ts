@@ -3,6 +3,7 @@
  */
 
 export * from './Main';
+export * from './allNote/index';
 export * from './auth/index';
 export * from './home/index';
 export * from './note/index';
