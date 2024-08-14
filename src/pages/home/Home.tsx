@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styled from '@emotion/styled';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '@/shared/components/Calendar/CustomCalendar.css';
@@ -17,8 +18,9 @@ export const Home = () => {
     <>
       <Nav />
       <Body>
-        <h1>home</h1>
-        <NoteList />
+        <Container>
+          <NoteList noteType="home" />
+        </Container>
       </Body>
       <HomeAside>
         <Calendar
@@ -33,3 +35,10 @@ export const Home = () => {
     </>
   );
 };
+
+const Container = styled.div`
+  height: 100%;
+  width: 100%;
+  max-width: 1182px;
+  padding: 0 35px 0 47px;
+`;

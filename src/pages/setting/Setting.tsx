@@ -201,9 +201,8 @@ export const Setting = () => {
 };
 
 const Container = styled.div`
-  padding-right: 44px;
-  padding-left: 56px;
   height: 100%;
   width: 100%;
   max-width: 1182px;
+  padding: 0 35px 0 47px;
 `;

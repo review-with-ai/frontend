@@ -1,9 +1,10 @@
-import { Circle, Flex } from '@chakra-ui/react';
+import { Checkbox, Flex, Image } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { styleToken } from '@/shared';
 
-export const NoteListItem = () => (
+export const TrashNoteItem = () => (
   <Container>
+    <Checkbox padding="16px 14px 16px 17px" />
     <Flex
       flexDirection="row"
       justifyContent="flex-start"
@@ -12,13 +13,12 @@ export const NoteListItem = () => (
         width: '100%',
         minHeight: '63px',
         padding: '10px 0',
-        paddingLeft: '22px',
         wordBreak: 'keep-all',
         overflowWrap: 'break-word',
         cursor: 'pointer',
       }}
     >
-      <Circle size="31.5px" bg={styleToken.color.noteList} />
+      <Image src="/src/assets/icon/rect.svg" alt="rect" />
       <Flex
         flexDirection="column"
         justifyContent="center"
@@ -41,12 +41,32 @@ export const NoteListItem = () => (
       >
         folder
       </div>
-      <span>noteListItemDate</span>
+      <div
+        style={{
+          maxWidth: '100px',
+          paddingRight: '30px',
+        }}
+      >
+        folder
+      </div>
+      <div
+        style={{
+          maxWidth: '100px',
+          paddingRight: '30px',
+        }}
+      >
+        -
+      </div>
     </Flex>
   </Container>
 );
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
   :hover {
     background-color: ${styleToken.color.gray100};
     border-radius: 6px;

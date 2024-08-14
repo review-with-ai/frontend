@@ -1,11 +1,24 @@
-import { NoteListItem } from '@/shared/components/NoteList/NoteListItem.tsx';
+import styled from '@emotion/styled';
+import { AllNoteItem, HomeNoteItem, TrashNoteItem } from '@/shared';
 
-export const NoteList = () => (
-  <div>
-    <NoteListItem />
-    <NoteListItem />
-    <NoteListItem />
-    <NoteListItem />
-    <NoteListItem />
-  </div>
-);
+type NoteListProps = {
+  noteType: 'all' | 'home' | 'trash';
+};
+
+export const NoteList = ({ noteType }: NoteListProps) => {
+  const isHome = noteType === 'home';
+  const isAll = noteType === 'all';
+  const isTrash = noteType === 'trash';
+
+  return (
+    <Container>
+      {isHome && <HomeNoteItem />}
+      {isAll && <AllNoteItem />}
+      {isTrash && <TrashNoteItem />}
+    </Container>
+  );
+};
+
+const Container = styled.div`
+  padding: 0 8px 20px;
+`;

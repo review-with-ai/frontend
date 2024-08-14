@@ -27,6 +27,8 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@chakra-ui/icon", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:3.2.0"],\
+          ["@chakra-ui/icons", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:2.1.1"],\
           ["@chakra-ui/react", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:2.8.2"],\
           ["@chromatic-com/storybook", "npm:1.5.0"],\
           ["@emotion/react", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:11.11.4"],\
@@ -78,6 +80,7 @@ const RAW_RUNTIME_STATE =
           ["react-calendar", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:5.0.0"],\
           ["react-dom", "virtual:75336eb15359e9a2188bbd311f77909ac8a249a4253ca41bc1533fed889c60f71e9b3413f76055e19e0225bfbe873f091e348ff2c1d33da873af700eb85d1941#npm:18.3.1"],\
           ["react-hook-form", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:7.51.5"],\
+          ["react-icons", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:5.3.0"],\
           ["react-router-dom", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:6.23.1"],\
           ["storybook", "npm:8.1.5"],\
           ["typescript", "patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"],\
@@ -3271,6 +3274,51 @@ const RAW_RUNTIME_STATE =
           ["@chakra-ui/icon", "virtual:8fd0f3686d3d0b4e7fa3284f37c6a03f989592098e5f132ed0b4dd9fa9a396f02c5fb4ba4dc7abeedd3614ff0b55551d8c9bbe5dab9d01a8d585ccbf6a3abb98#npm:3.2.0"],\
           ["@chakra-ui/shared-utils", "npm:2.0.5"],\
           ["@chakra-ui/system", "virtual:8fd0f3686d3d0b4e7fa3284f37c6a03f989592098e5f132ed0b4dd9fa9a396f02c5fb4ba4dc7abeedd3614ff0b55551d8c9bbe5dab9d01a8d585ccbf6a3abb98#npm:2.6.2"],\
+          ["@types/chakra-ui__system", null],\
+          ["@types/react", "npm:18.3.3"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@chakra-ui/system",\
+          "@types/chakra-ui__system",\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:3.2.0", {\
+        "packageLocation": "./.yarn/__virtual__/@chakra-ui-icon-virtual-9188a4989d/3/.yarn/berry/cache/@chakra-ui-icon-npm-3.2.0-62e79a945c-10c0.zip/node_modules/@chakra-ui/icon/",\
+        "packageDependencies": [\
+          ["@chakra-ui/icon", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:3.2.0"],\
+          ["@chakra-ui/shared-utils", "npm:2.0.5"],\
+          ["@chakra-ui/system", null],\
+          ["@types/chakra-ui__system", null],\
+          ["@types/react", "npm:18.3.3"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@chakra-ui/system",\
+          "@types/chakra-ui__system",\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@chakra-ui/icons", [\
+      ["npm:2.1.1", {\
+        "packageLocation": "../../.yarn/berry/cache/@chakra-ui-icons-npm-2.1.1-4710de399a-10c0.zip/node_modules/@chakra-ui/icons/",\
+        "packageDependencies": [\
+          ["@chakra-ui/icons", "npm:2.1.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:2.1.1", {\
+        "packageLocation": "./.yarn/__virtual__/@chakra-ui-icons-virtual-f066812aa7/3/.yarn/berry/cache/@chakra-ui-icons-npm-2.1.1-4710de399a-10c0.zip/node_modules/@chakra-ui/icons/",\
+        "packageDependencies": [\
+          ["@chakra-ui/icons", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:2.1.1"],\
+          ["@chakra-ui/icon", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:3.2.0"],\
+          ["@chakra-ui/system", null],\
           ["@types/chakra-ui__system", null],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
@@ -16279,6 +16327,28 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-icons", [\
+      ["npm:5.3.0", {\
+        "packageLocation": "../../.yarn/berry/cache/react-icons-npm-5.3.0-3814684035-10c0.zip/node_modules/react-icons/",\
+        "packageDependencies": [\
+          ["react-icons", "npm:5.3.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:5.3.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-icons-virtual-1eebbced6e/3/.yarn/berry/cache/react-icons-npm-5.3.0-3814684035-10c0.zip/node_modules/react-icons/",\
+        "packageDependencies": [\
+          ["react-icons", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:5.3.0"],\
+          ["@types/react", "npm:18.3.3"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["react-is", [\
       ["npm:16.13.1", {\
         "packageLocation": "../../.yarn/berry/cache/react-is-npm-16.13.1-a9b9382b4f-10c0.zip/node_modules/react-is/",\
@@ -16834,6 +16904,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["review-with-ai", "workspace:."],\
+          ["@chakra-ui/icon", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:3.2.0"],\
+          ["@chakra-ui/icons", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:2.1.1"],\
           ["@chakra-ui/react", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:2.8.2"],\
           ["@chromatic-com/storybook", "npm:1.5.0"],\
           ["@emotion/react", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:11.11.4"],\
@@ -16885,6 +16957,7 @@ const RAW_RUNTIME_STATE =
           ["react-calendar", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:5.0.0"],\
           ["react-dom", "virtual:75336eb15359e9a2188bbd311f77909ac8a249a4253ca41bc1533fed889c60f71e9b3413f76055e19e0225bfbe873f091e348ff2c1d33da873af700eb85d1941#npm:18.3.1"],\
           ["react-hook-form", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:7.51.5"],\
+          ["react-icons", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:5.3.0"],\
           ["react-router-dom", "virtual:cd53664ae0532e07f32846156496c5a76539a9c61abcf6dec5759f1362efe459d347dfa87da66ad122c60acd1af04584e4377980153e36c59c72bb85f8630857#npm:6.23.1"],\
           ["storybook", "npm:8.1.5"],\
           ["typescript", "patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"],\
