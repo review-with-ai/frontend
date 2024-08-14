@@ -4,10 +4,11 @@ import { styleToken, Typography } from '@/shared';
 
 type NavContentProps = {
   onHome: () => void;
+  onAllNote: () => void;
   onTrash: () => void;
 };
 
-export const NavContent = ({ onHome, onTrash }: NavContentProps) => (
+export const NavContent = ({ onHome, onAllNote, onTrash }: NavContentProps) => (
   <Container>
     <Flex
       width="100%"
@@ -31,7 +32,7 @@ export const NavContent = ({ onHome, onTrash }: NavContentProps) => (
           </Typography>
         </Item>
       </ItemContainer>
-      <ItemContainer>
+      <ItemContainer onClick={onAllNote}>
         <Item>
           <img src="/src/assets/icon/drop_folder.svg" alt="전체 노트" width={15} height={15} />
           <Typography

@@ -3,4 +3,6 @@
  */
 
 export * from './NoteList';
-export * from './NoteListItem';
+export * from './HomeNoteItem';
+export * from './AllNoteItem';
+export * from './TrashNoteItem';

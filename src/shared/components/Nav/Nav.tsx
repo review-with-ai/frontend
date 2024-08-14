@@ -11,6 +11,11 @@ export const Nav = () => {
     navigate(PATH.HOME);
   };
 
+  const handleClickAllNote = () => {
+    console.log('all note');
+    navigate(PATH.ALLNOTE);
+  };
+
   const handleClickNewNote = () => {
     console.log('new note');
     navigate(PATH.NOTE);
@@ -59,7 +64,7 @@ export const Nav = () => {
           <Image src="/src/assets/logo.svg" alt="복습할고양 로고" />
         </Flex>
         <NavButton onNote={handleClickNewNote} />
-        <NavContent onHome={handleClickHome} onTrash={handleClickTrash} />
+        <NavContent onHome={handleClickHome} onAllNote={handleClickAllNote} onTrash={handleClickTrash} />
         <NavFooter onLogout={handleClickLogout} onSetting={handleClickSetting} />
       </Container>
     </Navigation>

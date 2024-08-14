@@ -1,4 +1,4 @@
-import { Home, Login, Main, Signup, Setting, Trash, NewNote } from '@/pages';
+import { Home, Login, Main, Signup, Setting, Trash, NewNote, AllNote } from '@/pages';
 import { PATH, RouterLayout } from '@/shared';
 
 export const routes = [
@@ -11,6 +11,7 @@ export const routes = [
       // { path: PATH.OAUTH_KAKAO, element: <AuthKakao /> },
       // { path: PATH.OAUTH_NAVER, element: <AuthNaver /> },
       { path: PATH.HOME, element: <Home /> },
+      { path: PATH.ALLNOTE, element: <AllNote /> },
       { path: PATH.NOTE, element: <NewNote /> },
       { path: PATH.TRASH, element: <Trash /> },
       { path: PATH.SETTING, element: <Setting /> },
