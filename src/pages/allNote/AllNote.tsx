@@ -52,7 +52,7 @@ export const AllNote = () => {
                 padding="0 11px"
                 borderColor={styleToken.color.gray200}
               >
-                <Image src="/src/assets/icon/share.svg" alt="노트 이동" width="16px" marginRight="6px" />
+                <Image src="/assets/icon/share.svg" alt="노트 이동" width="16px" marginRight="6px" />
                 <Typography variant="subtitle1">노트 이동</Typography>
               </Button>
               <Button
@@ -62,7 +62,7 @@ export const AllNote = () => {
                 padding="0 11px"
                 borderColor={styleToken.color.gray200}
               >
-                <Image src="/src/assets/icon/trash.svg" alt="휴지통으로 이동" width="16px" marginRight="6px" />
+                <Image src="/assets/icon/trash.svg" alt="휴지통으로 이동" width="16px" marginRight="6px" />
                 <Typography variant="subtitle1">휴지통으로 이동</Typography>
               </Button>
             </Stack>

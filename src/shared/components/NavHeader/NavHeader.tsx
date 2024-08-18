@@ -8,7 +8,7 @@ type NavFooterProps = {
 export const NavHeader = ({ onBack }: NavFooterProps) => (
   <Flex width="100%">
     <Item onClick={onBack}>
-      <img src="/src/assets/icon/arrowLeft.svg" alt="뒤로가기" width={20} height={20} />
+      <img src="/assets/icon/arrowLeft.svg" alt="뒤로가기" width={20} height={20} />
     </Item>
   </Flex>
 );

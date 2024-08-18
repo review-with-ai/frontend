@@ -61,7 +61,7 @@ export const Nav = () => {
             cursor: 'pointer',
           }}
         >
-          <Image src="/src/assets/logo.svg" alt="복습할고양 로고" />
+          <Image src="/assets/logo.svg" alt="복습할고양 로고" />
         </Flex>
         <NavButton onNote={handleClickNewNote} />
         <NavContent onHome={handleClickHome} onAllNote={handleClickAllNote} onTrash={handleClickTrash} />

@@ -145,7 +145,7 @@ export const Setting = () => {
                 </Flex>
                 <Flex alignItems="center">
                   <img
-                    src="/src/assets/aouth/naver/btnG_아이콘사각.png"
+                    src="/assets/aouth/naver/btnG_아이콘사각.png"
                     alt="naver_login"
                     style={{ width: '18px', height: '18px' }}
                   />
@@ -170,7 +170,7 @@ export const Setting = () => {
                     }}
                   >
                     <img
-                      src="/src/assets/aouth/kakao/kakao_logo.svg"
+                      src="/assets/aouth/kakao/kakao_logo.svg"
                       alt="kakao_login"
                       style={{ width: '10px', height: '10px' }}
                     />

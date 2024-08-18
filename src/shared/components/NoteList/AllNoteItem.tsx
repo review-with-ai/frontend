@@ -18,7 +18,7 @@ export const AllNoteItem = () => (
         cursor: 'pointer',
       }}
     >
-      <Image src="/src/assets/icon/rect.svg" alt="rect" />
+      <Image src="/assets/icon/rect.svg" alt="rect" />
       <Flex
         flexDirection="column"
         justifyContent="center"

@@ -12,7 +12,7 @@ export const NavFooter = ({ onSetting, onLogout }: NavFooterProps) => (
     <Flex width="100%" height="auto" flexDirection="column" justifyContent="center" alignItems="flex-start">
       <ItemContainer onClick={onSetting}>
         <Item>
-          <img src="/src/assets/icon/setting.svg" alt="서비스 설정" width={20} height={20} />
+          <img src="/assets/icon/setting.svg" alt="서비스 설정" width={20} height={20} />
           <Typography
             variant="subtitle1"
             style={{
@@ -25,7 +25,7 @@ export const NavFooter = ({ onSetting, onLogout }: NavFooterProps) => (
       </ItemContainer>
       <ItemContainer onClick={onLogout}>
         <Item>
-          <img src="/src/assets/icon/signout.png" alt="로그아웃" width={20} height={20} />
+          <img src="/assets/icon/signout.png" alt="로그아웃" width={20} height={20} />
           <Typography
             variant="subtitle1"
             style={{

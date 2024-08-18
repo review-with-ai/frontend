@@ -34,7 +34,7 @@ export const Main = () => {
           marginBottom: '30px',
         }}
       >
-        <Image src="/src/assets/logo.svg" alt="복습할고양 로고" />
+        <Image src="/assets/logo.svg" alt="복습할고양 로고" />
       </Box>
       <Flex direction="column" gap="14px">
         <BaseButton
@@ -79,11 +79,7 @@ export const Main = () => {
           padding="0"
           border="none"
           img={
-            <img
-              src="/src/assets/aouth/kakao/kakao_logo.svg"
-              alt="kakao_login"
-              style={{ width: '20px', height: '20px' }}
-            />
+            <img src="/assets/aouth/kakao/kakao_logo.svg" alt="kakao_login" style={{ width: '20px', height: '20px' }} />
           }
           onClick={handleClickKakaoLogin}
         />
@@ -98,7 +94,7 @@ export const Main = () => {
           border="none"
           img={
             <img
-              src="/src/assets/aouth/naver/btnG_아이콘원형.png"
+              src="/assets/aouth/naver/btnG_아이콘원형.png"
               alt="naver_login"
               style={{ width: '100%', height: '100%' }}
             />

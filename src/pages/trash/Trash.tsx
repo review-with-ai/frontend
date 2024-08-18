@@ -37,7 +37,7 @@ export const Trash = () => {
             >
               <TagLabel>
                 <Flex>
-                  <Image src="/src/assets/icon/info.svg" alt="info" width="14px" marginRight="6px" />
+                  <Image src="/assets/icon/info.svg" alt="info" width="14px" marginRight="6px" />
                   <Typography variant="subtitle1">
                     휴지통에 저장된 항목은 1달이 지나면 자동으로 완전히 삭제됩니다.
                   </Typography>
@@ -60,7 +60,7 @@ export const Trash = () => {
                 padding="0 11px"
                 borderColor={styleToken.color.gray200}
               >
-                <Image src="/src/assets/icon/share.svg" alt="복원" width="16px" marginRight="6px" />
+                <Image src="/assets/icon/share.svg" alt="복원" width="16px" marginRight="6px" />
                 <Typography variant="subtitle1">복원</Typography>
               </Button>
               <Button
@@ -70,7 +70,7 @@ export const Trash = () => {
                 padding="0 11px"
                 borderColor={styleToken.color.gray200}
               >
-                <Image src="/src/assets/icon/trash.svg" alt="영구 삭제" width="16px" marginRight="6px" />
+                <Image src="/assets/icon/trash.svg" alt="영구 삭제" width="16px" marginRight="6px" />
                 <Typography variant="subtitle1">영구 삭제</Typography>
               </Button>
             </Stack>

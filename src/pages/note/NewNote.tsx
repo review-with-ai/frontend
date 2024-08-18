@@ -22,7 +22,7 @@ export const NewNote = () => (
               theme="gray"
               border="unset"
               backgroundColor="unset"
-              img={<img src="/src/assets/icon/trash.svg" alt="삭제" style={{ width: '20px', height: '20px' }} />}
+              img={<img src="/assets/icon/trash.svg" alt="삭제" style={{ width: '20px', height: '20px' }} />}
             />
           </Flex>
           <Input placeholder="새로운 노트" maxWidth="250px" />

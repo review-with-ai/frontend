@@ -21,7 +21,7 @@ export const NavContent = ({ onHome, onAllNote, onTrash }: NavContentProps) => (
     >
       <ItemContainer onClick={onHome}>
         <Item>
-          <img src="/src/assets/icon/home.svg" alt="홈" width={15} height={15} />
+          <img src="/assets/icon/home.svg" alt="홈" width={15} height={15} />
           <Typography
             variant="subtitle1"
             style={{
@@ -34,7 +34,7 @@ export const NavContent = ({ onHome, onAllNote, onTrash }: NavContentProps) => (
       </ItemContainer>
       <ItemContainer onClick={onAllNote}>
         <Item>
-          <img src="/src/assets/icon/drop_folder.svg" alt="전체 노트" width={15} height={15} />
+          <img src="/assets/icon/drop_folder.svg" alt="전체 노트" width={15} height={15} />
           <Typography
             variant="subtitle1"
             fontWeight={600}
@@ -48,7 +48,7 @@ export const NavContent = ({ onHome, onAllNote, onTrash }: NavContentProps) => (
       </ItemContainer>
       <ItemContainer>
         <Item>
-          <img src="/src/assets/icon/folder.svg" alt="기본 폴더" width={15} height={15} />
+          <img src="/assets/icon/folder.svg" alt="기본 폴더" width={15} height={15} />
           <Typography
             variant="subtitle1"
             style={{
@@ -61,7 +61,7 @@ export const NavContent = ({ onHome, onAllNote, onTrash }: NavContentProps) => (
       </ItemContainer>
       <ItemContainer onClick={onTrash}>
         <Item>
-          <img src="/src/assets/icon/trash.svg" alt="휴지통" width={15} height={15} />
+          <img src="/assets/icon/trash.svg" alt="휴지통" width={15} height={15} />
           <Typography
             variant="subtitle1"
             style={{

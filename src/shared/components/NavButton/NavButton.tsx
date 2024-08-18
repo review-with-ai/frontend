@@ -22,7 +22,7 @@ export const NavButton = ({ onNote }: NavButtonProps) => (
           cursor: 'pointer',
         }}
       >
-        <img src="/src/assets/note/add_memo.png" alt="새로운 노트 작성" width={25} height={25} />
+        <img src="/assets/note/add_memo.png" alt="새로운 노트 작성" width={25} height={25} />
       </Flex>
     </Item>
   </Container>
