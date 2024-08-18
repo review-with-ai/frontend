@@ -7,12 +7,12 @@ import { Body, HomeAside } from '@/shared';
 import { Nav } from '@/shared/components/Nav';
 import { NoteList } from '@/shared/components/NoteList';
 
-export const Home = () => {
-  const [date, setDate] = useState(new Date());
+type OptionalDate = Date | null;
 
-  const onChangeDate = (newDate: Date) => {
-    setDate(newDate);
-  };
+type DateSelection = OptionalDate | [OptionalDate, OptionalDate];
+
+export const Home = () => {
+  const [date, setDate] = useState<DateSelection>(new Date());
 
   return (
     <>
@@ -29,7 +29,7 @@ export const Home = () => {
           formatDay={(_, date) => date.getDate().toString()}
           calendarType="gregory"
           value={date}
-          onChange={onChangeDate}
+          onChange={setDate}
         />
       </HomeAside>
     </>
