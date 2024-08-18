@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Box, Flex } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
-import { BaseButton, Body, handleAxiosError, http, PATH, styleToken, Typography } from '@/shared';
+import { BaseButton, Body, PATH, styleToken, Typography } from '@/shared';
 import { Nav } from '@/shared/components/Nav';
 
 type User = {
@@ -30,17 +30,19 @@ export const Setting = () => {
     navigate(PATH.MAIN);
   };
 
-  const getUserInfo = async () => {
-    try {
-      const responseInfo = await http.get('/api/v1/user/me');
-      console.log(responseInfo);
-      setUser(responseInfo.data);
-    } catch (e) {
-      handleAxiosError(e);
-      // alert('로그인이 필요한 서비스입니다.');
-      // navigate(PATH.MAIN);
-    }
-  };
+  console.log(setUser);
+
+  // const getUserInfo = async () => {
+  //   try {
+  //     const responseInfo = await http.get('/api/v1/user/me');
+  //     console.log(responseInfo);
+  //     setUser(responseInfo.data);
+  //   } catch (e) {
+  //     handleAxiosError(e);
+  //     alert('로그인이 필요한 서비스입니다.');
+  //     navigate(PATH.MAIN);
+  //   }
+  // };
 
   // useEffect(() => {
   // getUserInfo();

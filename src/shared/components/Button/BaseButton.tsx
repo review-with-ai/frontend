@@ -1,4 +1,4 @@
-import { HTMLAttributes, PropsWithChildren } from 'react';
+import React, { HTMLAttributes, PropsWithChildren } from 'react';
 import { Button, ButtonProps } from '@chakra-ui/react';
 import { customTheme, Typography, TypographyVariant } from '@/shared';
 
@@ -8,7 +8,7 @@ type BaseButtonProps = {
   font?: TypographyVariant;
   fontColor?: string;
   img?: React.ReactNode;
-  children?: string;
+  children?: React.ReactNode;
   isDisabled?: boolean;
   onClick?: () => void;
 } & HTMLAttributes<HTMLButtonElement>;

@@ -46,6 +46,13 @@
     padding: 0.5em;
 }
 
+.react-calendar__month-view__weekdays__weekday abbr,
+.react-calendar__month-view__weekdays__weekday--weekend abbr,
+.react-calendar__month-view__weekdays__weekday abbr[title],
+.react-calendar__tile abbr {
+    text-decoration: none;
+}
+
 .react-calendar__month-view__weekNumbers .react-calendar__tile {
     display: flex;
     align-items: center;
@@ -137,7 +144,4 @@
 .react-calendar--selectRange .react-calendar__tile--hover {
     background-color: #e6e6e6;
     border-radius: 0;
-}
-
-.react-calendar__tile abbr {
 }
